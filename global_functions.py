@@ -1,0 +1,258 @@
+""""
+Support Server: https://discord.gg/QXFgRdSA27
+
+
+ABSTRACT
+
+A discord group needs a multifunctional bot that can provide various features such as playing music in a voice channel, discord moderation, and utility commands to enhance the overall experience for all members. This discord bot is equipped with built-in AI, making it the perfect companion for any discord server. It offers interactive and fun commands that are easy to use and accessible to everyone. The bot can provide helpful information when asked questions, making it a valuable addition to any community. It also addresses problems caused by the increasing number of members in discord servers by providing a reliable source of communication and maintaining order for an organized environment for users. Overall, this discord bot is an excellent choice for any server looking for a fun and interactive experience that will keep everyone entertained. It has features like playing music with a single command, AI-based answering system, Discord moderation, and many other utility commands. It not only provides entertainment but also helps to keep the discord server organized and well-maintained. With its user-friendly interface and a wide range of features, it will be a great addition to any discord server.
+
+
+"""
+
+
+
+
+
+#This Code Is Under The MPL-2.0 License
+import json
+import logging
+
+logging.basicConfig(level=logging.DEBUG,filemode="w",filename="logs/logs.log",
+                    format="%(asctime)s - %(levelname)s - %(message)s")
+
+# CONTANTS
+MAX_BEG_GAIN = 300
+DAILY_AMT = 2000
+PREFIX = "!"
+MAX_WORK_GAIN = 2000
+WEEKLY_AMT = 5000
+BOT_USER_ID = "BOT_USER_ID"
+MEMBERCOUNT_CHANNEL = "MEMBERCOUNT_CHANNEL_ID" # set it in int  # membercount channel id here, default is the one in glow's server
+UPDATE_CHANNEL = "UPDATE_CHANNEL_ID"
+ERROR_CHANNELS = ["ERROR_CHANNELS_ID"]
+GUILDS = [
+    {"server": "_ID"},
+    {"server": "_ID"}
+]
+
+EMOJIS_TO_USE_FOR_CALCULATOR = {"1":"1️⃣", "2":"2️⃣", "3":"3️⃣", "4":"4️⃣", "5":"5️⃣", "6":"6️⃣", "7":"7️⃣", "8":"8️⃣", "9":"9️⃣", "0":"0️⃣", "+":"➕", "-":"➖","x":"✖️","÷":"➗",".":"⏺️"} #Make sure to change the point emoji, as this one is from glows server
+
+TOKEN = "BOT_TOKEN"
+APIKEY = "CHAT_GPT_API_KEY"
+giphy_apikey = "API_KEY"
+
+
+hugs = [
+    "https://i.pinimg.com/originals/f2/80/5f/f2805f274471676c96aff2bc9fbedd70.gif",
+    "https://i.pinimg.com/originals/85/72/a1/8572a1d1ebaa45fae290e6760b59caac.gif",
+    "http://25.media.tumblr.com/tumblr_ma7l17EWnk1rq65rlo1_500.gif",
+    "https://i.imgur.com/r9aU2xv.gif?noredirect",
+    "https://i.gifer.com/2QEa.gif",
+    "https://25.media.tumblr.com/2a3ec53a742008eb61979af6b7148e8d/tumblr_mt1cllxlBr1s2tbc6o1_500.gif",
+    "https://media3.giphy.com/media/sUIZWMnfd4Mb6/200.gif",
+    "https://i.pinimg.com/originals/f9/e9/34/f9e934cddfd6fefe0079ab559ef32ab4.gif",
+    "https://media3.giphy.com/media/wnsgren9NtITS/giphy.gif",
+    "https://38.media.tumblr.com/b22e5793e257faf94cec24ba034d46cd/tumblr_nldku9v7ar1ttpgxko1_500.gif",
+    "https://i2.wp.com/nileease.com/wp-content/uploads/2020/09/38ff71787d331e2c8c7326846e718c4b.gif?fit=498%2C314&ssl=1",
+    "https://i.pinimg.com/originals/0c/bc/37/0cbc377124f2f91d76277160b5803372.gif",
+    "https://78.media.tumblr.com/88b9b721e47c33272a3cafd0fdb916b5/tumblr_oqkfe3BbYM1vb10byo1_500.gif",
+]
+
+people_list = [
+    "OogaBooga",
+    "Chill",
+    "Vibe",
+    "a fellow beggar",
+    "drunk boi",
+    "the big man",
+    "You from a parallel universe",
+    "Elon",
+    "Siri",
+    "Creepy dude with a knife who is now prolly watching you and is bout to eat you tmmr :)",
+    "Dream",
+    "¯\_(ツ)_/¯",
+    "you?",
+    "I",
+    "Discord",
+    "Your Dad",
+    "Your Mom",
+    "Your family who is really unhappy with you because your let everyone down by becoming a redditor",
+    "Your imaginary gf :rofl:",
+    "the street",
+]
+
+ban_msg = [
+    "flew to close to the radar and got banned",
+    "messed up bad and got banned",
+    "has been struck by the BAN HAMMER",
+    "annoyed some staff and got banned",
+    "wanted to see what would happen if you broke rules and got banned",
+    "tried to dodge the ban hammer :rofl:",
+    "was blown up by Creeper",
+    "was killed by [Intentional Game Design]",
+    "tried to swim in lava",
+    "experienced kinetic energy",
+    "drowned",
+    "hit the ground too hard",
+    "was squashed by a falling anvil",
+    "was squished too much",
+    "fell out of the world",
+    "went up in flames",
+    "went off with a bang",
+    "was struck by lightning",
+    "discovered the floor was lava",
+]
+
+
+kick_msg = [
+    "got booted and got kicked?",
+    "got kicked, imagine getting kicked...",
+    "got kicked... I ran out of jokes",
+]
+
+work_list = ["Discord", "Microsoft", "Apple", "a Police Station", "Youtube", "Google"]
+
+options = [
+    "uber",
+    "taxi",
+    "doorstep",
+    "locker",
+    "grass",
+    "couch",
+    "house",
+    "bush",
+    "street",
+    "lake",
+]
+
+choices = ["get no", "gained"]
+# test
+
+bank_memberships = [
+    {
+        "name": "Basic Membership - ``$100,000``",
+        "description": "Store up to $100,000 in your bank",
+    },
+    {
+        "name": "Silver Membership - ``$500,000``",
+        "description": "Store up to $250,000 in your bank",
+    },
+    {
+        "name": "Diamond Membership - ``$1,000,000``",
+        "description": "Store up to $500,000 in your bank!",
+    },
+    {
+        "name": "Magical Membership - ``$1,500,000``",
+        "description": "Store up to $1,000,000 in your bank!",
+    },
+    {
+        "name": "Epik Membership - ``$2,500,000``",
+        "description": "Store up to $2,000,000 in your bank!",
+    },
+    {
+        "name": "Glow Membership - ``$5,000,000``",
+        "description": "Store up to $10,000,000 in your bank!",
+    },
+]
+
+bank_membership_conversions = [
+    {
+        "name": "basic membership",
+        "nickname": "basic",
+        "price": 100_000,
+        "amount": 100_000,
+    },
+    {
+        "name": "silver membership",
+        "nickname": "epic",
+        "price": 500_000,
+        "amount": 250_000,
+    },
+    {
+        "name": "diamond membership",
+        "nickname": "magical",
+        "price": 1_000_000,
+        "amount": 500_000,
+    },
+    {
+        "name": "magical membership",
+        "nickname": "diamond",
+        "price": 1_500_000,
+        "amount": 1_000_000,
+    },
+    {
+        "name": "epik membership",
+        "nickname": "silver",
+        "price": 2_500_000,
+        "amount": 2_000_000,
+    },
+    {
+        "name": "glow membership",
+        "nickname": "exotic",
+        "price": 5_000_000,
+        "amount": 10_000_000,
+    },
+]
+
+responses = [
+    "It is certain.",
+    "It is decidedly so.",
+    "Without a doubt.",
+    "Yes - definitely.",
+    "You may rely on it.",
+    "As I see it, yes.",
+    "Most likely.",
+    "Outlook good.",
+    "Yes.",
+    "Signs point to yes.",
+    "Reply hazy, try again.",
+    "Ask again later.",
+    "Better not tell you now.",
+    "Cannot predict now.",
+    "Concentrate and ask again.",
+    "Don't count on it.",
+    "My reply is no.",
+    "My sources say no.",
+    "Outlook not so good.",
+    "Very doubtful.",
+]
+
+
+shop_display = [
+    {"name": "Laptop", "price": "``$5,000``", "description": "Used for posting memes"},
+    {"name": "Phone", "price": "``$1,000``", "description": "Bored? Well look at some memes!"},
+    {"name": "Nothing", "price": "``$500,000``", "description": "It's literally nothing, why would you waste your money"},
+    {"name": "Glow", "price": "``$100,000``", "description": "FLEX"},
+]
+
+
+shop_buy = [
+    {"name": "laptop", "nickname": "lap", "price": 5_000, "sell": 2_500},
+    {"name": "phone", "nickname": "cell", "price": 1_000, "sell": 500},
+    {"name": "glow", "nickname": "glow", "price": 100_000, "sell": 10_000},
+    {"name": "nothing", "nickname": "air", "price": 500_000, "sell": 250_000}
+]
+
+
+def fetch_data(fn):
+    with open("json/" + str(fn), "r") as f:
+        data = json.load(f)
+    return data
+
+
+def write_data(fn, data):
+    with open("json/" + str(fn), "w") as f:
+        json.dump(data, f, indent=4)
+
+def read_database():
+    try:
+        with open("database.json") as f:
+            database=json.load(f)
+    except:
+        write_database(data={})
+        database={}
+    return database
+
+def write_database(*, data):
+    with open("database.json","w+") as f:
+        json.dump(data, f, indent=4)

@@ -1,0 +1,55 @@
+{
+ "page": {
+  "pageid": 23501090,
+  "ns": 0,
+  "title": "Chapri",
+  "contentmodel": "wikitext",
+  "pagelanguage": "en",
+  "pagelanguagedir": "ltr",
+  "touched": "2023-02-02T11:19:52Z",
+  "lastrevid": 1056849275,
+  "length": 192,
+  "fullurl": "https://en.wikipedia.org/wiki/Chapri",
+  "editurl": "https://en.wikipedia.org/w/index.php?title=Chapri&action=edit",
+  "canonicalurl": "https://en.wikipedia.org/wiki/Chapri"
+ },
+ "summary": {
+  "type": "disambiguation",
+  "title": "Chapri",
+  "displaytitle": "<span class=\"mw-page-title-main\">Chapri</span>",
+  "namespace": {
+   "id": 0,
+   "text": ""
+  },
+  "wikibase_item": "Q5073424",
+  "titles": {
+   "canonical": "Chapri",
+   "normalized": "Chapri",
+   "display": "<span class=\"mw-page-title-main\">Chapri</span>"
+  },
+  "pageid": 23501090,
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1056849275",
+  "tid": "c02e2f80-7d63-11ed-8f5d-93d7251ae6bb",
+  "timestamp": "2021-11-23T22:59:18Z",
+  "description": "Topics referred to by the same term",
+  "description_source": "local",
+  "content_urls": {
+   "desktop": {
+    "page": "https://en.wikipedia.org/wiki/Chapri",
+    "revisions": "https://en.wikipedia.org/wiki/Chapri?action=history",
+    "edit": "https://en.wikipedia.org/wiki/Chapri?action=edit",
+    "talk": "https://en.wikipedia.org/wiki/Talk:Chapri"
+   },
+   "mobile": {
+    "page": "https://en.m.wikipedia.org/wiki/Chapri",
+    "revisions": "https://en.m.wikipedia.org/wiki/Special:History/Chapri",
+    "edit": "https://en.m.wikipedia.org/wiki/Chapri?action=edit",
+    "talk": "https://en.m.wikipedia.org/wiki/Talk:Chapri"
+   }
+  },
+  "extract": "Chapri can ref to:Chapri, Mianwali, village of Mianwali, Punjab, Pakistan\nChapri, Nowshera, village of Nowshera, Khyber Pakhtunkhwa, Pakistan\n",
+  "extract_html": "<p><b>Chapri</b> can ref to:</p><ul><li>Chapri, Mianwali, village of Mianwali, Punjab, Pakistan</li>\n<li>Chapri, Nowshera, village of Nowshera, Khyber Pakhtunkhwa, Pakistan</li></ul>\n"
+ }
+}
