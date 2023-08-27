@@ -9,7 +9,7 @@
 # OogaBooga Bot
 
 
-[![](https://discord.com/api/guilds/519527459620651011/embed.png)](https://discord.gg/bZJYdBXGjr)
+[![](https://discord.com/api/guilds/519527459620651011/embed.png)](https://discord.gg/VfWQ7YcD6Q)
 [![](https://custom-icon-badges.herokuapp.com/github/commit-activity/w/glowstik-yt/projglow?style=plastic&logo=github)](https://github.com/Ayushx309/Discord-Mutli-Purpose-BOT)
 [![Powered by Nextcord](https://img.shields.io/github/license/Glowstik-YT/projglow?style=plastic)](LICENSE)
 [![](https://custom-icon-badges.herokuapp.com/bitbucket/issues/Glowstik-YT/projglow?style=plastic&logo=github)](https://github.com/Ayushx309/Discord-Mutli-Purpose-BOT/issues)
@@ -50,4 +50,4 @@ Remember That When You Contribute You Agree To The [License](/LICENSE) And [CLA]
 
 # Communication
 
-If you need support for the bot please join the [Project OogaBooga Support Server](https://discord.gg/bZJYdBXGjr) if you want to chat with other devs join [Xotic Gamer](https://discord.gg/bZJYdBXGjr)
+If you need support for the bot please join the [Project OogaBooga Support Server](https://discord.gg/VfWQ7YcD6Q) if you want to chat with other devs join [Xotic Gamer](https://discord.gg/VfWQ7YcD6Q)
